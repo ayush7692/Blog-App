@@ -23,10 +23,10 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <Link to="/blogs" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors">Blogs</Link>
+     
       {!user ? (
         <>
-          <Link to="/login" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors">Login</Link>
+          <Link to="/login" onClick={() => setIsMenuOpen(false)} className="pt-3 transition-colors md:px-4 py-2 md:border border-white/15 hover:text-black hover:bg-white">Login</Link>
           <Link to="/register" onClick={() => setIsMenuOpen(false)} className="border border-white/15 px-4 py-2 hover:bg-white hover:text-black transition-all duration-300">
             Register
           </Link>
@@ -62,16 +62,17 @@ const Navbar = () => {
 
         {/* Action Area (Desktop & Mobile) */}
         <div className="flex items-center gap-4 md:gap-8">
+             <Link 
+                to="/blogs" 
+                onClick={() => setIsMenuOpen(false)}
+                className="font-mono text-[9px] uppercase tracking-widest text-white/60 border border-white/10 px-3 py-1.5 hover:bg-white hover:text-black transition-all md:text-[13px]"
+              >
+                BLOGS
+              </Link>
           {/* Mobile Profile & Write (Always visible high-priority actions) */}
           {user && (
-            <div className="flex md:hidden items-center gap-4 z-[60]">
-               <Link 
-                to="/blogs/add" 
-                onClick={() => setIsMenuOpen(false)}
-                className="font-mono text-[9px] uppercase tracking-widest text-white/60 border border-white/10 px-3 py-1.5 hover:bg-white hover:text-black transition-all"
-              >
-                Write
-              </Link>
+            <div className="flex md:hidden items-centre gap-4 z-[60]">
+            
               <Link to="/profile" onClick={() => setIsMenuOpen(false)} className="w-8 h-8 rounded-full border border-white/20 overflow-hidden bg-[#1b1b1b]">
                  <img 
                     src={user.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=default"} 
@@ -101,8 +102,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black/98 backdrop-blur-xl z-50 flex flex-col items-center justify-center transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-          <div className="flex flex-col items-center gap-12 font-mono text-lg uppercase tracking-[0.3em] text-[#e2e2e2]">
+        <div className={`fixed right-0 top-20.5 bg-black/98 backdrop-blur-xl z-50 flex flex-col items-center justify-center transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
+          <div className="flex flex-col items-center  gap-4 font-mono text-md uppercase tracking-[0.3em] text-[#e2e2e2]">
             {navLinks}
           </div>
         </div>

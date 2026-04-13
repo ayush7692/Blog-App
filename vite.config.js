@@ -11,7 +11,7 @@ export default defineConfig({
 
 
 // To avoid cors issue 
-  // server:{
+  //   server:{
   //        proxy: {
   //     "/api": {
   //       target: 'https://blog-backend-ten-psi.vercel.app/',
