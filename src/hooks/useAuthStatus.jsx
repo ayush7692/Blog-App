@@ -5,10 +5,10 @@ const useAuthStatus = () => {
     const{user}= useSelector(store => store.auth)
 
     const [checkStatus, setCheckStatus] = useState(true)
-    const [authorised, setAuthorised] = useState(false)
+    const [authorised, setAuthorised] = useState(Boolean(user))
 
   useEffect(()=>{
-    setAuthorised(Boolean(user))
+    if(user){setAuthorised(true)}else{setAuthorised(false)}
     setCheckStatus(false)
      },[user])
 
