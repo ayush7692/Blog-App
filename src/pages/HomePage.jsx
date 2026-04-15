@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuthStatus from '../hooks/useAuthStatus';
 
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
+  const{authorised} = useAuthStatus()
+
   
   const fadeUpRef1 = useRef(null);
   const fadeUpRef2 = useRef(null);
@@ -94,12 +97,14 @@ const HomePage = () => {
               Architectural Narrative
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={"/blogs"} className="bg-white text-black px-8 py-4 text-xs font-mono font-bold uppercase tracking-widest hover:bg-[#d4d4d4] transition-all duration-300">
+              <Link to={"/blogs"} className="bg-white cursor-pointer text-black px-8 py-4 text-xs font-mono font-bold uppercase tracking-widest hover:bg-[#d4d4d4] transition-all duration-300">
                 EXPLORE ARCHIVE
               </Link>
-              <Link to={"/login"} className="border border-white/20 text-white px-8 py-4 text-xs font-mono font-bold uppercase tracking-widest hover:border-white transition-all duration-300">
+              {authorised?(<Link to={"/blogs/add"} className="border border-white/20 text-white cursor-pointer  px-8 py-4 text-xs font-mono font-bold uppercase tracking-widest hover:border-white transition-all duration-300">
+                WRITE YOUR BLOG
+              </Link>):(<Link to={"/login"} className="border border-white/20 text-white cursor-pointer px-8 py-4 text-xs font-mono font-bold uppercase tracking-widest hover:border-white transition-all duration-300">
                 JOIN SYSTEM
-              </Link>
+              </Link>)}
             </div>
           </div>
         </section>

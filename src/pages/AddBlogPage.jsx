@@ -75,8 +75,8 @@ const AddBlogPage = () => {
         {/* Action Toolbar (Ghosted) */}
         <div className="max-w-4xl mx-auto mb-12 flex justify-between items-end border-b border-[#474747]/20 pb-4 px-4 sm:px-0">
           <div className="flex flex-col gap-1">
-            <span className="font-mono text-[0.625rem] uppercase tracking-[0.2em] text-[#919191]">DRAFT_MODE</span>
-            <span className="font-mono text-[0.6875rem] text-[#c6c6c6]">WORDS: 0</span>
+          <span className="font-mono text-[0.9rem] uppercase tracking-[0.2em] text-[#919191]">DRAFT_MODE</span>
+            <span className="font-md text-[0.9rem] text-[#60833e]">WORDS: {description.length} </span>
           </div>
           <button type="submit" className="bg-white text-black font-mono text-[0.6875rem] uppercase tracking-[0.1em] px-6 py-3 font-bold hover:bg-[#d4d4d4] transition-all duration-100 outline-none">
             {edit.isEdit?"UPDATED":"PUBLISH"}
