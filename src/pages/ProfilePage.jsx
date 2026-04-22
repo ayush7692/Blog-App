@@ -45,12 +45,11 @@ const ProfilePage = () => {
   }
 
   useEffect(() => {
-    if (user?.bio) {
-        setBioText(user.bio)
-    }
-
     if (!user) {
       navigate("/")
+    }
+    if (user?.bio) {
+        setBioText(user.bio)
     }
 
     if (!blogError) {

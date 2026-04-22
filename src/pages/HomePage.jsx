@@ -91,7 +91,7 @@ const HomePage = () => {
             style={{ transform: `translateY(${slowOut}px)` }}
           >
             <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c6c6c6] mb-6 block">
-              Volume 01 — Edition 2025
+              Volume 01 — Edition 2026
             </span>
             <h2 className="font-display text-5xl md:text-7xl text-white font-bold tracking-tight mb-8">
               Architectural Narrative
@@ -153,10 +153,12 @@ const HomePage = () => {
               </div>
             </div>
             
-            <div className="aspect-square relative flex items-center justify-center cursor-pointer overflow-hidden border border-white/5 bg-[#171717] hover:bg-[#2a2a2a] transition-colors duration-500">
+                <div className="aspect-square group relative flex items-center justify-center cursor-pointer overflow-hidden border border-white/5 bg-[#171717] hover:bg-[#2a2a2a] transition-colors duration-500">
               <div className="absolute inset-0 dot-grid opacity-30 group-hover:scale-105 transition-transform duration-500"></div>
-              <div className="relative z-10 text-center p-8">
-               <span className="font-display text-4xl text-white opacity-20 block mb-2">[ _ ]</span>
+              <div className="relative  z-10 text-center p-8 grayscale-85 hover:scale-110 transition-all duration-600">
+               <h2 className=" hidden md:block md:opacity-0 md:hover:opacity-100 absolute z-99 text-xl text-white left-35 top-65 font-black">  Think Loud.. </h2>
+
+                <img src="src\image\lamp-image.jpg" alt="[-]" />   
               </div>
             </div>
             
