@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuthStatus from '../hooks/useAuthStatus';
+import image from "../Image/lamp-image.jpg"
 
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -158,7 +159,7 @@ const HomePage = () => {
               <div className="relative  z-10 text-center p-8 grayscale-85 hover:scale-110 transition-all duration-600">
                <h2 className=" hidden md:block md:opacity-0 md:hover:opacity-100 absolute z-99 text-xl text-white left-35 top-65 font-black">  Think Loud.. </h2>
 
-                <img src="src\image\lamp-image.jpg" alt="[-]" />   
+                <img src={image} alt="[Just Wait To Load]" />   
               </div>
             </div>
             
